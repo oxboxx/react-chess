@@ -1,0 +1,26 @@
+{
+  "include": ["src", "public/worker", "custom.d.ts"], // src 폴더의 모든 파일을 확인한다는 뜻.
+  "compilerOptions": {
+    "outDir": "build", // 자바스트립트 파일이 생성될 디렉터리를 지정.
+    "rootDir": "./", // 루트경로 바꾸기 (js 파일 아웃풋 경로에 영향줌)
+    "target": "ES6", // 어떤 버전의 자바스크립트로 컴파일 할 것인지.
+    "lib": ["ES6", "DOM"], // 합쳐진 라이브러리에서 정의된 파일을 특정 => 자바스크립트 코드가 어디에 동작할 것인지 작성.
+    "strict": false, // 엄격하게 검사.
+    "noImplicitAny": false, // any 타입 금지
+    "noImplicitThis": true, // any 타입인 this 키워드 금지
+    "allowJs": true, // js 파일들 ts에서 import해서 쓸 수 있는지
+    "checkJs": true, // js 파일에서도 에러체크 할 것인지
+    "esModuleInterop": true, // ES6 모듈 사양을 준수하여 CommonJS 모듈을 가져올 수 있다.
+    "module": "CommonJS", //무슨 import 문법 쓸건지 'commonjs', 'amd', 'es2015', 'esnext'
+    "jsx": "preserve", // tsx 파일을 jsx로 어떻게 컴파일할 것인지 'preserve', 'react-native', 'react'
+    "declaration": true, // 컴파일시 .d.ts 파일도 자동으로 함께생성 (현재쓰는 모든 타입이 정의된 파일)
+    "removeComments": true, // 컴파일시 주석제거
+    "noUnusedLocals": true, // 지역변수 전부 사용해야 함
+    "noUnusedParameters": true, // 파라미터 전부 사용해야 함
+    "noImplicitReturns": true, // 모든 함수에 return이 포함되어야 함
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
